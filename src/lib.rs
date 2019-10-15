@@ -192,7 +192,7 @@ impl<'font, H: BuildHasher> GlyphBrush<'font, (), H> {
         render_format: wgpu::TextureFormat,
         raw_builder: glyph_brush::GlyphBrushBuilder<'font, H>,
     ) -> Self {
-        let (cache_width, cache_height) = raw_builder.initial_cache_size;
+        let (cache_width, cache_height) = (256, 256);
 
         GlyphBrush {
             pipeline: Pipeline::<()>::new(
@@ -269,7 +269,7 @@ impl<'font, H: BuildHasher>
         depth_stencil_state: wgpu::DepthStencilStateDescriptor,
         raw_builder: glyph_brush::GlyphBrushBuilder<'font, H>,
     ) -> Self {
-        let (cache_width, cache_height) = raw_builder.initial_cache_size;
+        let (cache_width, cache_height) = (256, 256);
 
         GlyphBrush {
             pipeline: Pipeline::<wgpu::DepthStencilStateDescriptor>::new(
